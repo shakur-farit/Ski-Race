@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
     private PlayerDamage playerDamage;
 
+    private float screenCenterX;
+
 
 
     private void Start()
@@ -70,12 +72,18 @@ public class PlayerController : MonoBehaviour
         groundCheck = GetComponentInChildren<GroundCheck>();
         playerDamage = GetComponent<PlayerDamage>();
 
+        // Save the horizontal center of the screen for mobile device controlling.
+        screenCenterX = Screen.width * 0.5f;
     }
+
+
 
     private void Update()
     {
+        
         if (isMoving && groundCheck.isGrounded && !playerDamage.isHurt)
         {
+            // PC controlling with keyboard.
             if (Input.GetKey(leftKey))
             {
                 TurnLeft();
@@ -91,6 +99,24 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(decelerationKey))
             {
                 Deceleration();
+            }
+
+            // Mobile device controlling.
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Stationary)
+                {
+                    if (touch.position.x > screenCenterX)
+                    {
+                        TurnRight();
+                    }
+                    else
+                    {
+                        TurnLeft();
+                    }
+                }
             }
         }
     }

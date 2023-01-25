@@ -278,7 +278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70035748}
   m_LocalRotation: {x: 0.25988102, y: 0, z: 0, w: 0.96564066}
-  m_LocalPosition: {x: 105.73175, y: 10.756983, z: -70.39808}
+  m_LocalPosition: {x: 105.79059, y: 10.756983, z: -70.39808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -789,6 +789,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2693573932408249066, guid: 11ad6071766f6d5428a83259fef12ec1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2693573932408249067, guid: 11ad6071766f6d5428a83259fef12ec1,
         type: 3}
       propertyPath: m_Mesh
@@ -838,6 +843,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Convex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2693573932408249068, guid: 11ad6071766f6d5428a83259fef12ec1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2693573932408249068, guid: 11ad6071766f6d5428a83259fef12ec1,
         type: 3}
@@ -1535,7 +1545,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13622
+  m_Name: pb_Mesh-63524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1739,7 +1749,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.75, y: 1}
+    m_SensorSize: {x: 0.4864865, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1756,7 +1766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667486966}
   m_LocalRotation: {x: 0.259881, y: 0, z: 0, w: 0.9656406}
-  m_LocalPosition: {x: 105.73175, y: 10.756983, z: -70.39808}
+  m_LocalPosition: {x: 105.79059, y: 10.756983, z: -70.39808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3724,7 +3734,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13782
+  m_Name: pb_Mesh-63684
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4484,7 +4494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1104758188, guid: 0d50e2882bd324d4792f8982e4ee1b42, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104758189, guid: 0d50e2882bd324d4792f8982e4ee1b42, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 3500
       objectReference: {fileID: 0}
     - target: {fileID: 1752922582, guid: 0d50e2882bd324d4792f8982e4ee1b42, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6026,6 +6040,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237044751802496667, guid: c59c0239f9eeecd49b2881b6fb4ebb84,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 70035750}
+    - target: {fileID: 8237044751802496667, guid: c59c0239f9eeecd49b2881b6fb4ebb84,
+        type: 3}
+      propertyPath: playerStats.acceleration
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59c0239f9eeecd49b2881b6fb4ebb84, type: 3}
