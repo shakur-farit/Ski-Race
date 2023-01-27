@@ -51,15 +51,15 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Whether the player is moving downhill or not.")]
     public bool isMoving;
 
-    [Tooltip("Child GameObject to check if we are on the ground")]
+    // Child GameObject to check if we are on the ground
     private GroundCheck groundCheck;
-
+    // Player's Rigidbody component
     private Rigidbody rb;
-
+    // Player's Animator component
     private Animator animator;
-
+    // Player's PlayerDamage component
     private PlayerDamage playerDamage;
-
+    // Separator of screen along the X axis for touch movement.
     private float screenCenterX;
 
 
@@ -79,46 +79,15 @@ public class PlayerController : MonoBehaviour
 
 
     private void Update()
-    {
-        
+    {  
         if (isMoving && groundCheck.isGrounded && !playerDamage.isHurt)
         {
-            // PC controlling with keyboard.
-            if (Input.GetKey(leftKey))
-            {
-                TurnLeft();
-            }
-            if (Input.GetKey(rightKey))
-            {
-                TurnRight();
-            }
-            if (Input.GetKey(accelerationKey))
-            {
-                Acceleration();
-            }
-            if (Input.GetKey(decelerationKey))
-            {
-                Deceleration();
-            }
+            KeyboardMovemnt();
 
-            // Mobile device controlling.
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Stationary)
-                {
-                    if (touch.position.x > screenCenterX)
-                    {
-                        TurnRight();
-                    }
-                    else
-                    {
-                        TurnLeft();
-                    }
-                }
-            }
+            MovementWithTouch();
         }
+
+        StopTrace();
     }
 
     private void FixedUpdate()
@@ -140,7 +109,52 @@ public class PlayerController : MonoBehaviour
 
         // update the Animator's state depending on our speed.
         animator.SetFloat("playerSpeed", playerStats.speed);
+        animator.SetBool("isGrounded", groundCheck.isGrounded);
+        animator.SetBool("isHurt", playerDamage.isHurt);
 
+
+    }
+
+    private void KeyboardMovemnt()
+    {
+        // PC controlling with keyboard.
+        if (Input.GetKey(leftKey))
+        {
+            TurnLeft();
+        }
+        if (Input.GetKey(rightKey))
+        {
+            TurnRight();
+        }
+        if (Input.GetKey(accelerationKey))
+        {
+            Acceleration();
+        }
+        if (Input.GetKey(decelerationKey))
+        {
+            Deceleration();
+        }
+    }
+
+    private void MovementWithTouch()
+    {
+        // Mobile device controlling.
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Stationary)
+            {
+                if (touch.position.x > screenCenterX)
+                {
+                    TurnRight();
+                }
+                else
+                {
+                    TurnLeft();
+                }
+            }
+        }
 
     }
 
@@ -218,5 +232,30 @@ public class PlayerController : MonoBehaviour
         float NewRange = (NewMax - NewMin);
         float NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
         return (NewValue);
+    }
+
+    // Stop traces when player not grounded.
+    private void StopTrace()
+    {
+        TrailRenderer[] traces = GetComponentsInChildren<TrailRenderer>();
+
+        if (groundCheck.isGrounded)
+        {
+            
+            for(int i = 0; i < traces.Length; i++) 
+            {
+                print("is enable.");
+                traces[i].emitting = enabled;
+            }
+        }
+        else
+        {
+
+            for(int i = 0; i < traces.Length; i++) 
+            {
+                print("is disable.");
+                traces[i].emitting = false;
+            }
+        }
     }
 }

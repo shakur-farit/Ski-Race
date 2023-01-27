@@ -22,7 +22,8 @@ public class GroundCheck : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
-            isGrounded = false;
+            isGrounded = false; 
+            print("Not on ground");
         }
     }
 }

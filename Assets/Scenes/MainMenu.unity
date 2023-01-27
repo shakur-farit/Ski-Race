@@ -208,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70035748}
   m_LocalRotation: {x: 0.25901744, y: -0.547124, z: -0.13283293, w: 0.78480613}
-  m_LocalPosition: {x: 109.08571, y: -5.471216, z: -158.13922}
+  m_LocalPosition: {x: 109.086205, y: -5.4718804, z: -158.13815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1886,7 +1886,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5625, y: 1}
+    m_SensorSize: {x: 0.4864865, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1903,7 +1903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667486966}
   m_LocalRotation: {x: 0.25901744, y: -0.547124, z: -0.13283293, w: 0.78480613}
-  m_LocalPosition: {x: 109.08571, y: -5.471216, z: -158.13922}
+  m_LocalPosition: {x: 109.086205, y: -5.4718804, z: -158.13815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4073,7 +4073,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-134478
+  m_Name: pb_Mesh-5618
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5852,6 +5852,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979880231758284141, guid: 522376da0284a9e44bfd5e47bf40a317,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979880231758284141, guid: 522376da0284a9e44bfd5e47bf40a317,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 2979880231758284142, guid: 522376da0284a9e44bfd5e47bf40a317,
         type: 3}
